@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun May 15 02:01:12 2022
+# Process ID: 16760
+# Current directory: C:/Users/JFM/Desktop/Jeen_Nekkit6-master/miriscv_testsoc/miriscv_testsoc.runs/impl_1
+# Command line: vivado.exe -log miriscv_test_soc.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source miriscv_test_soc.tcl -notrace
+# Log file: C:/Users/JFM/Desktop/Jeen_Nekkit6-master/miriscv_testsoc/miriscv_testsoc.runs/impl_1/miriscv_test_soc.vdi
+# Journal file: C:/Users/JFM/Desktop/Jeen_Nekkit6-master/miriscv_testsoc/miriscv_testsoc.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source miriscv_test_soc.tcl -notrace

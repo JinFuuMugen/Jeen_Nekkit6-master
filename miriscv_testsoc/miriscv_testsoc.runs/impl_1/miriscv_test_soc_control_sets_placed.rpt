@@ -1,0 +1,271 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Sun May 15 02:03:05 2022
+| Host         : DESKTOP-UM44HEE running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file miriscv_test_soc_control_sets_placed.rpt
+| Design       : miriscv_test_soc
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   193 |
+|    Minimum number of control sets                        |   193 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   374 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   193 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     6 |
+| >= 6 to < 8        |     8 |
+| >= 8 to < 10       |    69 |
+| >= 10 to < 12      |    65 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    43 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            2 |
+| No           | No                    | Yes                    |             194 |           72 |
+| No           | Yes                   | No                     |              37 |           22 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |            2717 |          982 |
+| Yes          | Yes                   | No                     |             132 |           58 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+-----------------------------------------------------------+----------------------------+------------------+----------------+
+|   Clock Signal   |                       Enable Signal                       |      Set/Reset Signal      | Slice Load Count | Bel Load Count |
++------------------+-----------------------------------------------------------+----------------------------+------------------+----------------+
+|  clk_i_IBUF_BUFG |                                                           |                            |                2 |              2 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RX/RX_BRC/FSM_onehot_CState_reg[0][0]     | apb_uart_i/UART_RXFF/AR[0] |                1 |              4 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RX/RX_BRC/p_1_out[3]                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              4 |
+|  clk_i_IBUF_BUFG | core/fetch/E[0]                                           | apb_uart_i/UART_RXFF/AR[0] |                1 |              4 |
+|  clk_i_IBUF_BUFG | core/decode/mdu/div_unit/iter[4]_i_1_n_0                  | apb_uart_i/UART_RXFF/AR[0] |                1 |              5 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RX/RX_MVF/iCounter[4]_i_1_n_0             | apb_uart_i/UART_RXFF/AR[0] |                2 |              5 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iUSAGE[4]_i_1_n_0                    | apb_uart_i/UART_RXFF/AR[0] |                1 |              5 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iUSAGE[5]_i_1_n_0                    | apb_uart_i/UART_RXFF/AR[0] |                3 |              6 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_BG2/E[0]                                  | apb_uart_i/UART_RXFF/AR[0] |                2 |              6 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[12]_6[0]                         | apb_uart_i/UART_RXFF/AR[0] |                2 |              6 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iWRAddr[6]_i_1_n_0                   | apb_uart_i/UART_RXFF/AR[0] |                3 |              7 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iWRAddr[6]_i_1__0_n_0                | apb_uart_i/UART_RXFF/AR[0] |                3 |              7 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iRDAddr[6]_i_1__0_n_0                | apb_uart_i/UART_RXFF/AR[0] |                3 |              7 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/E[0]                                 | apb_uart_i/UART_RXFF/AR[0] |                3 |              7 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iRDAddr[6]_i_1_n_0                   | apb_uart_i/UART_RXFF/AR[0] |                3 |              7 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[36]_32                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[37]_55                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[38]_37                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/iTXFIFORead                                    | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[31]_14                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[29]_16                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[30]_15                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[2]_44                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[3]_45                       | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[39]_35                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[35]_54                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[40]_40                      | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[10]_21                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | core/fetch/iLCR_reg[7]_0[0]                               | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[13]_51                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[17]_22                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[19]_24                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[1]_43                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[15]_53                      | apb_uart_i/UART_RXFF/AR[0] |                5 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[27]_18                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[12]_50                      | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[32]_30                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[14]_52                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[16]_6                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[20]_25                      | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[0]_42                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[18]_23                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[11]_49                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[24]_2                       | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[26]_3                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[33]_31                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[34]_36                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[4]_46                       | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[61]_5                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[9]_20                       | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[62]_0                       | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[50]_10                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[49]_13                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[58]_8                       | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[55][7]_i_1_n_0              | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[6]_41                       | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[42]_57                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[44]_38                      | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[45]_58                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[48]_1                       | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[46]_34                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[57]_9                       | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[7]_48                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[8]_19                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[43]_39                      | apb_uart_i/UART_RXFF/AR[0] |                5 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[51]_12                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[52]_4                       | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[63][7]_i_1_n_0              | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[59]_60                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[41]_56                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[53]_11                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[60]_7                       | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[54][7]_i_1_n_0              | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[47]_33                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[5]_47                       | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[56]_59                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[12]_8[0]                         | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[12]_7[0]                         | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | core/fetch/iLCR_reg[7]_4[0]                               | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[22]_27                      | apb_uart_i/UART_RXFF/AR[0] |                3 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[21]_26                      | apb_uart_i/UART_RXFF/AR[0] |                1 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[23]_28                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[25]_29                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TXFF/iFIFOMem[28]_17                      | apb_uart_i/UART_RXFF/AR[0] |                2 |              8 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[39]_114                     | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RX/RX_BRC/E[0]                            | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[40]_113                     | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[37]_107                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[17]_75                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[1]_99                       | apb_uart_i/UART_RXFF/AR[0] |                5 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[0]_96                       | apb_uart_i/UART_RXFF/AR[0] |                5 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[35]_106                     | apb_uart_i/UART_RXFF/AR[0] |                5 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[15]_105                     | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[19]_73                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[31]_72                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[34]_90                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[38]_92                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[2]_100                      | apb_uart_i/UART_RXFF/AR[0] |                5 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[24]_61                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[11]_102                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[13]_104                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[23]_77                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[27]_81                      | apb_uart_i/UART_RXFF/AR[0] |                8 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[12]_103                     | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[16]_64                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[22]_76                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[14]_93                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[25]_87                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[18]_74                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[29]_79                      | apb_uart_i/UART_RXFF/AR[0] |                5 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[6]_95                       | apb_uart_i/UART_RXFF/AR[0] |                6 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[21]_86                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[30]_78                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[26]_62                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[28]_80                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[33]_89                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[36]_91                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[20]_85                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[32]_88                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[43]_112                     | apb_uart_i/UART_RXFF/AR[0] |                6 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[54][10]_i_1_n_0             | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[62]_66                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[51]_71                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[44]_111                     | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[47]_116                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[9]_84                       | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[59]_119                     | apb_uart_i/UART_RXFF/AR[0] |                5 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[53]_70                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[60]_65                      | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[61]_67                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[46]_115                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[50][10]_i_1_n_0             | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[45]_110                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[42]_109                     | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[48][10]_i_1_n_0             | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[55][10]_i_1_n_0             | apb_uart_i/UART_RXFF/AR[0] |                7 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[56]_118                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[58]_68                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[8]_83                       | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[7]_94                       | apb_uart_i/UART_RXFF/AR[0] |                6 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[4]_97                       | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[5]_98                       | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[52]_63                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[41]_108                     | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[63][10]_i_1_n_0             | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[3]_101                      | apb_uart_i/UART_RXFF/AR[0] |                6 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[57]_69                      | apb_uart_i/UART_RXFF/AR[0] |                2 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[49]_117                     | apb_uart_i/UART_RXFF/AR[0] |                3 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_RXFF/iFIFOMem[10]_82                      | apb_uart_i/UART_RXFF/AR[0] |                4 |             11 |
+|  clk_i_IBUF_BUFG | apb_uart_i/UART_TX/CState                                 | apb_uart_i/UART_RXFF/AR[0] |                3 |             13 |
+|  clk_i_IBUF_BUFG | core/decode/mdu/div_unit/d_next_state[1]                  | apb_uart_i/UART_RXFF/AR[0] |                8 |             31 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[9]_5[0]                          | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[10]_0[0]                         | apb_uart_i/UART_RXFF/AR[0] |               19 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[10]_3[0]                         | apb_uart_i/UART_RXFF/AR[0] |               13 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/dmem_reg_0_0_i_14_2[0]                         | apb_uart_i/UART_RXFF/AR[0] |               11 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_10[0]                        | apb_uart_i/UART_RXFF/AR[0] |               15 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_12[0]                        | apb_uart_i/UART_RXFF/AR[0] |               13 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_2[0]                         | apb_uart_i/UART_RXFF/AR[0] |               21 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_3[0]                         | apb_uart_i/UART_RXFF/AR[0] |               13 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_4[0]                         | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[10]_4[0]                         | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_5[0]                         | apb_uart_i/UART_RXFF/AR[0] |               12 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/dmem_reg_0_0_i_14_1[0]                         | apb_uart_i/UART_RXFF/AR[0] |               13 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_6[0]                         | apb_uart_i/UART_RXFF/AR[0] |               16 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_7[0]                         | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[10]_1[0]                         | apb_uart_i/UART_RXFF/AR[0] |               11 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_8[0]                         | apb_uart_i/UART_RXFF/AR[0] |               10 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_9[0]                         | apb_uart_i/UART_RXFF/AR[0] |               11 |             32 |
+|  clk_i_IBUF_BUFG | core/decode/mdu/div_unit/rem_result[63]_i_1_n_0           | apb_uart_i/UART_RXFF/AR[0] |               15 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_13[0]                        | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/dmem_reg_0_0_i_15_1[0]                         | apb_uart_i/UART_RXFF/AR[0] |               11 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[10]_2[0]                         | apb_uart_i/UART_RXFF/AR[0] |               17 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[10]_5[0]                         | apb_uart_i/UART_RXFF/AR[0] |               13 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/dmem_reg_0_0_i_15_2[0]                         | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_1[0]                         | apb_uart_i/UART_RXFF/AR[0] |               11 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_11[0]                        | apb_uart_i/UART_RXFF/AR[0] |               12 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[11]_0[0]                         | apb_uart_i/UART_RXFF/AR[0] |               16 |             32 |
+|  clk_i_IBUF_BUFG | apb_timer_i/TIMER_GEN[1].timer_i/regs_q[0][31]_i_1_n_0    | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | apb_timer_i/TIMER_GEN[0].timer_i/regs_q[0][31]_i_1__0_n_0 | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[7]_0[0]                          | apb_uart_i/UART_RXFF/AR[0] |               10 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[7]_1[0]                          | apb_uart_i/UART_RXFF/AR[0] |               10 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[7]_2[0]                          | apb_uart_i/UART_RXFF/AR[0] |               10 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[8]_0[0]                          | apb_uart_i/UART_RXFF/AR[0] |               14 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[8]_1[0]                          | apb_uart_i/UART_RXFF/AR[0] |               12 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[9]_0[0]                          | apb_uart_i/UART_RXFF/AR[0] |               12 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[9]_1[0]                          | apb_uart_i/UART_RXFF/AR[0] |               15 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[9]_2[0]                          | apb_uart_i/UART_RXFF/AR[0] |               13 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[9]_3[0]                          | apb_uart_i/UART_RXFF/AR[0] |               18 |             32 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o_reg[9]_4[0]                          | apb_uart_i/UART_RXFF/AR[0] |               17 |             32 |
+|  clk_i_IBUF_BUFG | core/decode/mdu/div_unit/div_operand_a                    | apb_uart_i/UART_RXFF/AR[0] |               34 |             64 |
+|  clk_i_IBUF_BUFG | core/fetch/fetch_unit/pc_reg[31]_i_1_n_0                  | apb_uart_i/UART_RXFF/AR[0] |               21 |             74 |
+|  clk_i_IBUF_BUFG | core/fetch/f_instr_o[31]_i_1_n_0                          | apb_uart_i/UART_RXFF/AR[0] |               42 |            104 |
+|  clk_i_IBUF_BUFG |                                                           | apb_uart_i/UART_RXFF/AR[0] |               94 |            231 |
++------------------+-----------------------------------------------------------+----------------------------+------------------+----------------+
+
+
